@@ -5,7 +5,8 @@ def weryfikacja():
     data = res.json()
 
     ip = data["ip"]
-    
+
+    print("Hej mopsyyk :)")
     print("Witaj użytkowniku!")
     print("Nick:")
     user = input(">> ")
