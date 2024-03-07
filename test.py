@@ -51,8 +51,8 @@ def select_vpn_server():
 
 def main():
     local_version = "1.0"  # Wersja lokalna Twojej aplikacji
-    github_url = 'https://raw.githubusercontent.com/Foczkaexe/niesl/main/cos.py'
-    local_path = 'C:\\niesl\\cos.py'
+    github_url = 'https://raw.githubusercontent.com/Foczkaexe/niesl/main/test.py'
+    local_path = 'C:\\niesl\\test.py'
 
     if check_for_updates(local_version, github_url):
         update_vpn_program(github_url, local_path)
