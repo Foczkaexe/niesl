@@ -6,7 +6,6 @@ def weryfikacja():
 
     ip = data["ip"]
 
-    print("jebać kurwyy")
     print("Witaj użytkowniku!")
     print("Nick:")
     user = input(">> ")
@@ -31,7 +30,7 @@ def check_for_updates(local_version, github_url):
     latest_version = response.text.strip()
     return latest_version != local_version
 
-def update_vpn_program(github_url, local_path):
+def update_program(github_url, local_path):
     print("Pobieranie najnowszej wersji...")
     download_file(github_url, local_path)
     print("Aktualizacja zakończona pomyślnie.")
@@ -56,12 +55,15 @@ def main():
     local_path = 'C:\\niesl\\test.py'
 
     if check_for_updates(local_version, github_url):
-        update_vpn_program(github_url, local_path)
+        update_program(github_url, local_path)
+        # Po aktualizacji ponownie wczytaj aplikację
+        os.system("python " + local_path)
+        return
 
     vpn_server_address = weryfikacja()
 
-    print(f"Uruchamianie aplikacji VPN z serwerem {vpn_server_address}...")
-    subprocess.run(["python", local_path, vpn_server_address])  # Uruchomienie aktualizowanej aplikacji z wybranym serwerem VPN
+    print(f"Uruchamianie aplikacji z serwerem {vpn_server_address}...")
+    subprocess.run(["python", local_path, vpn_server_address])
 
 if __name__ == "__main__":
     main()
