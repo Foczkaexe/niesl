@@ -6,6 +6,7 @@ def weryfikacja():
 
     ip = data["ip"]
 
+    print("Witaj mopsyyk :)")
     print("Witaj użytkowniku!")
     print("Nick:")
     user = input(">> ")
